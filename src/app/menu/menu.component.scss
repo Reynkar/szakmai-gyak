@@ -12,6 +12,7 @@
     border: 10px solid #15e89b;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    z-index: 1;
 }
 
 label {
@@ -20,6 +21,7 @@ label {
     margin-right: auto;
     font-family: "Times New Roman";
     font-size: 1.25rem;
+    z-index: 2;
     cursor: pointer;
     &.selected {
         border-radius: 20px;
@@ -29,4 +31,18 @@ label {
         padding-left: 35px;
         padding-right: 35px;
     }
+}
+
+@media only screen and (max-width: 768px) {
+    :host {
+        width: 50px;
+    }
+
+    label {
+        font-size: 0.75rem;
+        &.selected {
+            padding: 10px;
+        }
+    }
+
 }

@@ -11,7 +11,6 @@ interface Ring {
   providedIn: 'root'
 })
 export class DBserviceService {
-  httpClient: any;
 
   constructor() { }
 

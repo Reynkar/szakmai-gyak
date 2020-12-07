@@ -1,6 +1,3 @@
-<label [class.selected]="selectedMenu === 'home'"
-    (click)="selectedMenuChange.emit('home')">Home</label>
-<label [class.selected]="selectedMenu === 'list'"
-    (click)="selectedMenuChange.emit('list')">List</label>
-<label [class.selected]="selectedMenu === 'add'"
-    (click)="selectedMenuChange.emit('add')">Add Ring</label>
+<label [class.selected]="selectedMenu === 'home'" (click)="selectedMenuChange.emit('home')">Home</label>
+<label [class.selected]="selectedMenu === 'list'" (click)="selectedMenuChange.emit('list')">List</label>
+<label [class.selected]="selectedMenu === 'add'" (click)="selectedMenuChange.emit('add')">Add Ring</label>
