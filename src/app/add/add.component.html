@@ -1,0 +1,10 @@
+<div class="buttons">
+    <div><input #name [type]="'text'" placeholder="Ring's name"/></div>
+    <div><input #prop [type]="'text'" placeholder="Ring's property"/></div>
+    <div>
+        <!--<input #image [type]="'file'" accept="image/png, image/jpeg">-->
+        <button (click)="dbservice.addRing(name.value, prop.value)">Upload</button>  
+    </div>
+</div>
+
+ 

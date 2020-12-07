@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 150px;
+    height: 96%;
+    position: fixed;
+    left: 0;
+    background-color: #15e89b;
+    border-radius: 20px;
+    color: white;
+    border: 10px solid #15e89b;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+label {
+    border-bottom: 1px solid transparent;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Times New Roman";
+    font-size: 1.25rem;
+    cursor: pointer;
+    &.selected {
+        border-radius: 20px;
+        background-color: white;
+        color:  #15e89b;
+        padding: 5px;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}

@@ -1,0 +1,14 @@
+<div *ngIf="(dbservice.rings$ | async)?.length > 0; else empty">
+    <div class="itemBox" *ngFor="let ring of dbservice.rings$ | async">
+        <div class="imgBox">
+            <img src="./assets/e1.jpg" id="tableBanner" alt="Ring Image" width="400" height="300">
+            <button (click)="dbservice.deleteRing(ring.name)" title="Delete Item">X</button>
+        </div>
+        <div class="textBox">
+            <h3>{{ ring.name }}</h3>
+            <p>{{ ring.prop }}</p>
+        </div>
+    </div>
+</div>
+
+<ng-template #empty>The list is empty...</ng-template>

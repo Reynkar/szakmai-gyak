@@ -1,0 +1,7 @@
+<app-menu [(selectedMenu)]="menu"></app-menu>
+
+<div class="menu" [ngSwitch]="menu">
+    <app-home *ngSwitchCase="'home'"></app-home>
+    <app-list *ngSwitchCase="'list'"></app-list>
+    <app-add *ngSwitchCase="'add'"></app-add>
+</div>

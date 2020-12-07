@@ -1,0 +1,27 @@
+.itemBox {
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border:5px solid #15e89b;
+    background-color: #15e89b;
+    color: white;
+    border-radius: 10px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: red;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-size: 20pt;
+}
