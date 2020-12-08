@@ -3,9 +3,8 @@
     flex-direction: column;
     justify-content: space-around;
     width: 150px;
-    height: 96%;
+    height: 100%;
     position: absolute;
-    left: 0;
     background-color: #15e89b;
     border-radius: 20px;
     color: white;
@@ -13,6 +12,7 @@
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     z-index: 1;
+    text-align: center;
 }
 
 label {
@@ -35,11 +35,20 @@ label {
 
 @media only screen and (max-width: 1081px) {
     :host {
-        width: 50px;
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        text-align: center;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     label {
-        font-size: 0.75rem;
+        font-size: 1rem;
+
+        margin-left: 20px;
+        margin-right: 20px;
+
         &.selected {
             padding: 10px;
         }

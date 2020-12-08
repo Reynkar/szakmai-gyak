@@ -3,24 +3,25 @@
 }
 
 .menu {
-    width: 90%;
-    height: 91%;
-    position: absolute;
+    height: 100vh; 
     padding-left: 225px;
     padding-top: 50px;
+    box-sizing: border-box;
     border: 10px solid #15e89b;
     border-left-style: hidden;
     border-radius: 20px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
+    width: calc(100vw-150px);
 }
 
 @media only screen and (max-width: 1081px) {
 
     .menu{
-        padding-left: 100px;
-        padding-top: 30px;
-        height: 93%;
+        border: 10px solid #15e89b;
+        padding: 0px;
+        padding-top: 100px;
+        height: 100vh;
     }
 
 }

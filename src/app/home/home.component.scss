@@ -3,6 +3,13 @@
     width: 50%;
     padding: 10px;
     text-align: center;
+    #imgBox {
+        .imageOffline {
+            height: auto;
+            width: 100%;
+        }
+
+    }
 }
 
 @media only screen and (max-width: 1081px) {
