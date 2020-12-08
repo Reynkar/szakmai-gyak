@@ -1,4 +1,4 @@
-<div *ngIf="(dbservice.rings$ | async)?.length > 0; else empty">
+<div class="itemWrapper" *ngIf="(dbservice.rings$ | async)?.length > 0; else empty">
     <div class="itemBox" *ngFor="let ring of this.dbservice.rings$ | async">
         <div class="imgBox">
             <img [src]="ring.image" id="tableBanner" alt="Ring Image"/>

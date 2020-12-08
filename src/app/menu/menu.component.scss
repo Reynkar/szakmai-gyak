@@ -35,9 +35,13 @@ label {
 
 @media only screen and (max-width: 1081px) {
     :host {
-        width: 100%;
+        box-sizing: border-box;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
         height: auto;
-        display: inline-block;
+        flex-direction: row;
         text-align: center;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -50,7 +54,7 @@ label {
         margin-right: 20px;
 
         &.selected {
-            padding: 10px;
+            padding: 5px;
         }
     }
 
