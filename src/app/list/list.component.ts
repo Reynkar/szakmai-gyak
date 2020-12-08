@@ -11,6 +11,7 @@ export class ListComponent implements OnInit {
   constructor(public dbservice: DBserviceService) { }
 
   ngOnInit(): void {
+
   }
 
 }

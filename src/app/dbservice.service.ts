@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, Subscriber } from "rxjs";
-import { shareReplay, switchMap, startWith } from "rxjs/operators";
+import { Observable, Subject, Subscriber, forkJoin } from "rxjs";
+import { shareReplay, switchMap, startWith, map } from "rxjs/operators";
+import { HttpClient } from '@angular/common/http';
 
 interface Ring {
   name: string;
   prop: string;
+  image: any;
 }
 
 @Injectable({
@@ -12,7 +14,7 @@ interface Ring {
 })
 export class DBserviceService {
 
-  constructor() { }
+  constructor(private readonly http: HttpClient) { }
 
   public db$: Observable<IDBDatabase>;
   public readonly update$ = new Subject<void>();
@@ -57,14 +59,27 @@ export class DBserviceService {
               })))));
   }
 
-  public addRing(name: string, prop: string): void {
+  public async addRing(name: string, prop: string, temp: File): Promise<void> {
+    
+    function testfun(tempFile: File) {
+      return new Promise(resolve => {
+        var reader = new FileReader();
+        reader.onloadend = function () {
+          console.log('RESULT', reader.result);
+          resolve(reader.result);
+        }
+        reader.readAsDataURL(tempFile);
+      });
+    }
+
+    let image = await testfun(temp);
 
     this.db$.pipe(
       switchMap(
         (db) =>
           new Observable(subscriber => {
             let transaction = db.transaction("rings", "readwrite");
-            transaction.objectStore("rings").add({ name: name, prop: prop });
+            transaction.objectStore("rings").add({ name: name, prop: prop, image: image });
 
             transaction.oncomplete = () => {
               transaction = null;
@@ -80,7 +95,7 @@ export class DBserviceService {
     alert("Successful upload!");
   }
 
-  public deleteRing(name: string): void{
+  public deleteRing(name: string): void {
     this.db$.pipe(
       switchMap((db) => new Observable(subscriber => {
         let transaction = db.transaction("rings", "readwrite");
