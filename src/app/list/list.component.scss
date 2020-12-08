@@ -36,10 +36,6 @@ img {
 
 @media only screen and (max-width: 1081px) {
 
-    :host {
-        background-color: red;
-    }
-
     .itemWrapper {
         width: calc(100vw - 20px);
         display: flex;

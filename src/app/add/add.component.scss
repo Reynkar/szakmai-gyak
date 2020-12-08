@@ -27,3 +27,21 @@ button {
     background-color: #15e89b;
     color: white;
 }
+
+@media only screen and (max-width: 1081px) {
+
+    .buttons{
+        margin: 0 auto;
+        width: calc(100vw - 20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        input: {
+            width: 200px;
+
+        }
+    }
+
+}
