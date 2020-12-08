@@ -1,7 +1,7 @@
 <div *ngIf="(dbservice.rings$ | async)?.length > 0; else empty">
     <div class="itemBox" *ngFor="let ring of this.dbservice.rings$ | async">
         <div class="imgBox">
-            <img [src]="ring.image" id="tableBanner" alt="Ring Image" width="400" height="300">
+            <img [src]="ring.image" id="tableBanner" alt="Ring Image"/>
             <button (click)="dbservice.deleteRing(ring.name)" title="Delete Item">X</button>
         </div>
         <div class="textBox">

@@ -3,9 +3,9 @@
 }
 
 .menu {
-    width: 96%;
+    width: 90%;
     height: 91%;
-    position: fixed;
+    position: absolute;
     padding-left: 225px;
     padding-top: 50px;
     border: 10px solid #15e89b;
@@ -18,7 +18,7 @@
 @media only screen and (max-width: 1081px) {
 
     .menu{
-        padding-left: 135px;
+        padding-left: 100px;
         padding-top: 30px;
         height: 93%;
     }

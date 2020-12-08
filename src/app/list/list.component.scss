@@ -9,8 +9,10 @@
     border-radius: 10px;
 }
 
-img {
+.imgBox {
     border-radius: 10px;
+    width: 400px;
+    height: 300px;
 }
 
 button {
@@ -24,4 +26,24 @@ button {
     padding:0;
     cursor: pointer;
     font-size: 20pt;
+}
+
+img {
+    border-radius: 10px;
+    width: 400px;
+    height: 300px;
+}
+
+@media only screen and (max-width: 1081px) {
+
+    .imgBox {
+        width: 200;
+        height: 150;
+    }
+
+    img {
+        width: 200;
+        height: 150;
+    }
+
 }
