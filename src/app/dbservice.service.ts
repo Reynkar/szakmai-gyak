@@ -65,7 +65,6 @@ export class DBserviceService {
       return new Promise(resolve => {
         var reader = new FileReader();
         reader.onloadend = function () {
-          console.log('RESULT', reader.result);
           resolve(reader.result);
         }
         reader.readAsDataURL(tempFile);
@@ -85,14 +84,22 @@ export class DBserviceService {
               transaction = null;
               this.update$.next();
               subscriber.complete();
+              alert("Successful upload!");
+            };
+
+            transaction.onerror = (error) => {
+              transaction = null;
+              subscriber.error(error);
+              alert("An error has occured, check the console for more detail!");
             };
 
             return () => transaction?.abort();
           })
       )
-    ).subscribe();
-
-    alert("Successful upload!");
+    ).subscribe({
+        error: (error) =>
+          console.log("An error has occured during uploading a ring: ", error),
+    });
   }
 
   public deleteRing(name: string): void {
