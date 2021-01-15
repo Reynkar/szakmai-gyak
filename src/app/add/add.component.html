@@ -1,6 +1,6 @@
 <div class="buttons">
-    <div class ="inputField"><input #name [type]="'text'" placeholder="Ring's name" /></div>
-    <div class ="inputField"><input #prop [type]="'text'" placeholder="Ring's property" /></div>
+    <div class ="inputField"><input #name [type]="'text'" placeholder="Termés neve" /></div>
+    <div class ="inputField"><input #prop [type]="'text'" placeholder="Termés tulajdonság" /></div>
     <div class ="inputField"><input id="Upload" #image [type]="'file'" accept="image/png, image/jpeg"></div>
-    <div class ="inputField"><button (click)="dbservice.addRing(name.value, prop.value, image.files[0])">Upload</button></div>
+    <div class ="inputField"><button (click)="dbservice.addRing(name.value, prop.value, image.files[0])">Feltöltés</button></div>
 </div>
